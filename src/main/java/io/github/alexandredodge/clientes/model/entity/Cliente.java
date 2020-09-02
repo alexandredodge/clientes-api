@@ -26,6 +26,10 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Cliente {
 
+public void teste(){
+	
+}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	private Integer id;
