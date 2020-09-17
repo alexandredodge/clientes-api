@@ -9,23 +9,23 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.github.alexandredodge.clientes.model.entity.Cliente;
-import io.github.alexandredodge.clientes.model.entity.Servico;
-import io.github.alexandredodge.clientes.model.repositoty.ServicoRepository;
+import io.github.alexandredodge.clientes.model.entity.ServicoPrestado;
+import io.github.alexandredodge.clientes.model.repositoty.ServicoPrestadoRepository;
 
 @RestController
 @RequestMapping("/api/servicos")
 public class ServicoController {
 
-	private ServicoRepository repository;
+	private ServicoPrestadoRepository repository;
 	
 	@Autowired
-	public ServicoController(ServicoRepository repository) {
+	public ServicoController(ServicoPrestadoRepository repository) {
 		this.repository = repository;
 	}
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Servico salvar(@RequestBody Servico servico) {
+	public ServicoPrestado salvar(@RequestBody ServicoPrestado servico) {
 		return repository.save(servico);
 	}
 }

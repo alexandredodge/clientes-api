@@ -1,5 +1,7 @@
 package io.github.alexandredodge.clientes.rest;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,11 @@ public class ClienteController {
 
 	
 	private final ClienteRepository repository;
+	
+	@GetMapping
+	public List<Cliente> obterTodos(){
+		return repository.findAll();
+	}
 	
 	@Autowired
 	public ClienteController(ClienteRepository repository) {
